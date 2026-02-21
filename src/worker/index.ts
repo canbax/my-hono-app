@@ -1,4 +1,6 @@
 import { Hono } from "hono";
+import { serve } from "@hono/node-server";
+// import { serveStatic } from '@hono/node-server/serve-static'
 import { cors } from "hono/cors";
 import { ALL_PLACES } from "../../data/geoData.js";
 import { getPlace, findPlace, getTimes } from "../../api_src/calculator.js";
@@ -236,5 +238,9 @@ function getTimesFromPlace(c: Context) {
 function getIPAdress(c: Context) {
   return c.json({ IP: c.req.header("x-forwarded-for") });
 }
+
+serve(app, (info) => {
+  console.log(`Listening on http://localhost:${info.port}`); // Listening on http://localhost:3000
+});
 
 export default app;
