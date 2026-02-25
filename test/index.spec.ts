@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import app from "../src/worker/index";
+import app from "../src/index";
 import { ANKARA_PLACE_DATA } from "../data/mockData";
 import { vitest, it, expect, describe, afterEach } from "vitest";
 
