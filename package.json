@@ -38,17 +38,13 @@
     "typescript": "5.8.3",
     "typescript-eslint": "8.48.0",
     "vite": "^6.0.0",
-    "vitest": "^4.0.18",
-    "wrangler": "^4.67.0"
+    "vitest": "^4.0.18"
   },
   "private": false,
   "scripts": {
     "build": "tsc -b && vite build",
     "cf-typegen": "wrangler types",
-    "check": "tsc && vite build && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy",
-    "dev": "vite",
-    "start-server": "tsx src/worker/index.ts",
+    "dev": "tsx src/worker/index.ts",
     "format": "prettier --write .",
     "lint": "eslint --max-warnings=0",
     "lint-fix": "eslint --fix",
